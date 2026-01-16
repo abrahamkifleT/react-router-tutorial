@@ -11,6 +11,8 @@ import NotFound from './components/NotFound'
 import JobsLayout from './layout/JobsLayout'
 import Jobs from './pages/Jobs'
 import { jobsLoader } from './pages/Jobs'
+import JobDetail from './components/JobDetail'
+import { jobDetailLoader } from './components/JobDetail'
 
 const App = () => {
   const router = createBrowserRouter(
@@ -25,6 +27,7 @@ const App = () => {
         </Route>
         <Route path='jobs' element={<JobsLayout />}>
           <Route index element={<Jobs />} loader={jobsLoader} />
+          <Route path=':id' element={<JobDetail />} loader={jobDetailLoader}  />
         </Route>
         <Route path='*' element={<NotFound />} />
       </Route>
