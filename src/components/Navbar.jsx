@@ -1,18 +1,20 @@
 import React from 'react'
 import logo from '../assets/logo.svg'
-import { Link } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 const NavBar = () => {
+  const navigate = useNavigate();
+
   return (
     <div className='navbar'>
-        <img src={logo} alt="" width="130px" />
-        <ul>
-            <li><Link to={"/"}>Home</Link></li>
-            <li><Link to={"/product"}>Product</Link></li>
-            <li><Link to={"/about"}>About</Link></li>
-            <li><Link to={"/contact"}>Contact</Link></li>
-        </ul>
-        <button>Get Started</button>
+      <img src={logo} alt="" width="130px" />
+      <ul>
+        <NavLink to={"/"}><li>Home</li></NavLink>
+        <NavLink to={"/product"}><li>Product</li></NavLink>
+        <NavLink to={"/about"}><li>About</li></NavLink>
+        <NavLink to={"/contact"}><li>Contact</li></NavLink>
+      </ul>
+      <button onClick={() => navigate("/contact" , {replace:true})}>Get Started</button>
     </div>
   )
 }
