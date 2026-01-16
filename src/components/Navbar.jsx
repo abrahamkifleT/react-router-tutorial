@@ -3,8 +3,8 @@ import logo from '../assets/logo.svg'
 
 const NavBar = () => {
   return (
-    <div>
-        <img src={logo} alt="" />
+    <div className='navbar'>
+        <img src={logo} alt="" width="130px" />
         <ul>
             <li>Home</li>
             <li>Product</li>
